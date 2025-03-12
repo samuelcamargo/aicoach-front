@@ -1,6 +1,24 @@
 {
   "name": "aicoach",
-  "version": "0.1.0",
+  "description": "Sistema de inteligência artificial para criação e acompanhamento personalizado de cronogramas de estudos, potencializando seu aprendizado com eficiência e produtividade",
+  "version": "1.0.0",
+  "author": "Samuel Henrique de Alcantara Camargo <contato@aicoach.com.br>",
+  "keywords": [
+    "aicoach",
+    "inteligência artificial",
+    "cronograma de estudos",
+    "educação online",
+    "produtividade acadêmica",
+    "plano de estudos",
+    "mentoria educacional",
+    "IA para estudantes",
+    "aprendizado personalizado"
+  ],
+  "homepage": "http://aicoach.com.br",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelcamargo/aicoach.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

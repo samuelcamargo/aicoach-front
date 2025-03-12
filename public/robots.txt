@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: http://aicoach.com.br
+
+# Sitemaps
+Sitemap: http://aicoach.com.br/sitemap.xml 
