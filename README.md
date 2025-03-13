@@ -1,7 +1,7 @@
 # AiCoach
 
 <div align="center">
-  <img src="public/logo.png" alt="AiCoach Logo" width="200" height="auto" />
+  <h1>AiCoach</h1>
   <p><strong>Seu assistente pessoal de treinamento com Inteligência Artificial</strong></p>
 </div>
 
