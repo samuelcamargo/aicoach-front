@@ -1,7 +1,11 @@
 import React from 'react';
 import ProtectedRoute from '../ProtectedRoute';
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <ProtectedRoute>
       <div>

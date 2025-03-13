@@ -41,8 +41,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Função de login atualizada para aceitar userData e processar credenciais mocadas
   const login = async (userData: LoginData) => {
-    console.log('Tentando fazer login com:', userData);
-    
     // Simula uma chamada de API com dados mocados
     const mockApiResponse = {
       id: 1,
@@ -56,7 +54,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUser(mockApiResponse);
     localStorage.setItem('user', JSON.stringify(mockApiResponse));
     
-    console.log('Login bem-sucedido!', mockApiResponse);
     return true;
   };
 

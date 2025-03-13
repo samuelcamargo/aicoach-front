@@ -84,22 +84,40 @@ yarn test
 
 ## 📂 Estrutura do Projeto
 
-O projeto segue os princípios de Clean Architecture com a seguinte estrutura:
+O projeto segue uma estrutura baseada em App Router do Next.js 14, combinada com princípios da Clean Architecture:
 
 ```
 aicoach-front/
 ├── public/             # Arquivos estáticos
+├── app/                # Diretórios baseados em rotas (App Router)
+│   ├── login/          # Página de login
+│   ├── dashboard/      # Página de dashboard
+│   ├── cadastro/       # Página de cadastro
+│   ├── layout.tsx      # Layout principal da aplicação
+│   └── mui-registry.tsx # Configuração do Material UI
 ├── src/
 │   ├── domain/         # Entidades e regras de negócio
 │   ├── application/    # Casos de uso da aplicação
-│   ├── infrastructure/ # Implementações técnicas (temas, serviços externos)
-│   ├── presentation/   # Componentes de UI e páginas
-│   │   ├── components/ # Componentes reutilizáveis
-│   │   └── pages/      # Páginas da aplicação
+│   ├── infrastructure/ # Implementações técnicas
+│   ├── contexts/       # Contextos React (ex: AuthContext)
+│   ├── components/     # Componentes reutilizáveis
+│   ├── types/          # Definições de tipos TypeScript
+│   ├── config/         # Configurações da aplicação
 │   └── styles/         # Estilos globais
-├── tests/              # Testes unitários e de integração
-└── ...                 # Arquivos de configuração
+├── components/         # Componentes de UI reutilizáveis
+│   ├── ui/             # Componentes básicos de UI
+│   └── dashboard/      # Componentes específicos do dashboard
+└── lib/                # Bibliotecas e utilidades
 ```
+
+## 🧹 Manutenção do Código
+
+Este projeto segue práticas rigorosas de limpeza de código:
+
+- Todos os `console.log` foram removidos para garantir um código limpo em produção
+- Utilizamos ESLint para verificar e manter a qualidade do código
+- Commits seguem o padrão Conventional Commits
+- Revisões de código regulares para garantir a qualidade
 
 ## 🌐 Variáveis de Ambiente
 
@@ -125,7 +143,7 @@ Utilizamos o padrão Conventional Commits para mensagens de commit:
 - `style:` - Mudanças que não afetam o código (formatação, etc)
 - `refactor:` - Refatoração de código
 - `test:` - Adição ou correção de testes
-
+- `chore:` - Atualizações de tarefas de build, configurações, etc
 
 ## 📞 Suporte
 
