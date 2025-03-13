@@ -1,0 +1,13 @@
+/* Adicionar estas regras ao arquivo global de CSS */
+.dashboard-content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 0;
+}
+
+.dashboard-content > div {
+  height: auto;
+  min-height: auto;
+} 

@@ -1,17 +1,11 @@
-import { useAuth } from '@/contexts/AuthContext';
-import styles from '@/styles/dashboard/Header.module.css';
+import React from 'react';
 
-export default function Header() {
-  const { logout } = useAuth();
-
+const Header = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        {process.env.NEXT_PUBLIC_APP_NAME}
-      </div>
-      <button onClick={logout} className={styles.logoutButton}>
-        Sair
-      </button>
+    <header>
+      {/* Conteúdo do cabeçalho */}
     </header>
   );
-} 
+};
+
+export default Header; 

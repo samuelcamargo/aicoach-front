@@ -1,15 +1,16 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+"use client";
 
-// Definindo o tipo User - ESLint está indicando que 'username' e 'password' não são usados
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+// Definindo o tipo User
 type User = {
   username: string;
-  // Removemos password daqui, pois não armazenamos senhas no objeto de usuário
 };
 
 type AuthContextType = {
   user: User | null;
-  login: (username: string, password: string) => Promise<boolean>;
+  login: () => Promise<boolean>;
   logout: () => void;
   isLoading: boolean;
 };
@@ -30,15 +31,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
-  const login = async (username: string, password: string) => {
-    // Autenticação mockada - futuramente será substituída por API
-    if (username === 'samuel' && password === '123456') {
-      const userData = { username };
-      setUser(userData);
-      localStorage.setItem('user', JSON.stringify(userData));
-      return true;
-    }
-    return false;
+  // Simplificando a função login para remover os parâmetros não utilizados
+  const login = async () => {
+    return Promise.resolve(true);
   };
 
   const logout = () => {

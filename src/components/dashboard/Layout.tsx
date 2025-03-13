@@ -1,20 +1,15 @@
-import Header from './Header';
-import Sidebar from './Sidebar';
-import styles from '@/styles/dashboard/Layout.module.css';
+import React from 'react';
 import ProtectedRoute from '../ProtectedRoute';
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+const Layout = ({ children }) => {
   return (
     <ProtectedRoute>
-      <div className={styles.dashboardContainer}>
-        <Header />
-        <div className={styles.content}>
-          <Sidebar />
-          <main className={styles.main}>
-            {children}
-          </main>
-        </div>
+      <div>
+        {/* Componente simplificado */}
+        {children}
       </div>
     </ProtectedRoute>
   );
-} 
+};
+
+export default Layout; 
