@@ -43,10 +43,17 @@ export default function LoginPage() {
     setErrorMessage("");
     
     try {
-      await login(email, password);
-      router.push('/dashboard');
+      // Verificar as credenciais mocadas
+      if (email === "samuel" && password === "123456") {
+        // Passar um objeto com a propriedade username para corresponder ao formato esperado
+        await login({ username: email });
+        router.push('/dashboard');
+      } else {
+        throw new Error("Credenciais inválidas");
+      }
     } catch (error) {
       setErrorMessage("Email ou senha inválidos. Tente novamente.");
+      console.error("Erro no login:", error);
     } finally {
       setIsLoading(false);
     }

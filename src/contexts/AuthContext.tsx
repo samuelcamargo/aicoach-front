@@ -6,11 +6,19 @@ import { useRouter } from 'next/navigation';
 // Definindo o tipo User
 type User = {
   username: string;
+  name?: string;
+  email?: string;
+  role?: string;
+  id?: number;
+};
+
+type LoginData = {
+  username: string;
 };
 
 type AuthContextType = {
   user: User | null;
-  login: () => Promise<boolean>;
+  login: (userData: LoginData) => Promise<boolean>;
   logout: () => void;
   isLoading: boolean;
 };
@@ -31,9 +39,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
-  // Simplificando a função login para remover os parâmetros não utilizados
-  const login = async () => {
-    return Promise.resolve(true);
+  // Função de login atualizada para aceitar userData e processar credenciais mocadas
+  const login = async (userData: LoginData) => {
+    console.log('Tentando fazer login com:', userData);
+    
+    // Simula uma chamada de API com dados mocados
+    const mockApiResponse = {
+      id: 1,
+      username: userData.username,
+      name: 'Samuel Camargo',
+      email: 'samuel@exemplo.com',
+      role: 'admin'
+    };
+    
+    // Salva o usuário no state e no localStorage
+    setUser(mockApiResponse);
+    localStorage.setItem('user', JSON.stringify(mockApiResponse));
+    
+    console.log('Login bem-sucedido!', mockApiResponse);
+    return true;
   };
 
   const logout = () => {
